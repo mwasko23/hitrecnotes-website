@@ -179,22 +179,17 @@
             margin-bottom: 2rem;
         }
 
-        /* Tally Form Embed */
-        .tally-embed {
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed var(--border);
+        /* Tally Form Styling */
+        .tally-wrapper {
+            background: #1a1a1d;
             border-radius: 12px;
-            color: var(--text-muted);
-            font-size: 0.875rem;
+            padding: 2rem;
         }
 
-        /* When Tally is embedded, hide the placeholder */
-        .tally-embed iframe {
+        .tally-wrapper iframe {
             width: 100%;
             border: none;
+            filter: brightness(0.95);
         }
 
         /* Footer */
@@ -279,7 +274,9 @@
             <p>Need help with something else? Send us a message.</p>
 
             <!-- Tally Contact Form -->
-            <iframe data-tally-src="https://tally.so/embed/kdZdD6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="658" frameborder="0" marginheight="0" marginwidth="0" title="Contact Support"></iframe>
+            <div class="tally-wrapper">
+                <iframe data-tally-src="https://tally.so/embed/kdZdD6?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="658" frameborder="0" marginheight="0" marginwidth="0" title="Contact Support"></iframe>
+            </div>
         </div>
     </div>
 
