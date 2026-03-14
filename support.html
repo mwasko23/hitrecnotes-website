@@ -278,22 +278,8 @@
             <h2>Contact Support</h2>
             <p>Need help with something else? Send us a message.</p>
 
-            <!-- TALLY FORM EMBED - Replace this div with your Tally embed code -->
-            <div class="tally-embed" id="tally-form">
-                <!--
-                    TO EMBED YOUR TALLY FORM:
-                    1. Go to tally.so and create your form
-                    2. Click "Share" and select "Embed"
-                    3. Copy the iframe code
-                    4. Replace this entire div with the iframe code
-
-                    Example:
-                    <iframe data-tally-src="https://tally.so/embed/YOURFORMID?alignLeft=1&hideTitle=1&transparentBackground=1"
-                            loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0"
-                            title="Contact Support"></iframe>
-                -->
-                <p>Tally form will appear here.<br>Or email us directly: <a href="mailto:support@hitrecnotes.com" style="color: var(--accent);">support@hitrecnotes.com</a></p>
-            </div>
+            <!-- Tally Contact Form -->
+            <iframe data-tally-src="https://tally.so/embed/kdZdD6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="658" frameborder="0" marginheight="0" marginwidth="0" title="Contact Support"></iframe>
         </div>
     </div>
 
@@ -308,9 +294,7 @@
         <p class="footer-copy">&copy; 2026 Hit Rec Notes. All rights reserved.</p>
     </footer>
 
-    <!-- Tally Script (uncomment when you have your form) -->
-    <!--
-    <script async src="https://tally.so/widgets/embed.js"></script>
-    -->
+    <!-- Tally Script -->
+    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 </body>
 </html>
