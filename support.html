@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Hit Rec Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #1a1a1d;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #52525b;
+            --accent: #f59e0b;
+            --accent-glow: rgba(245, 158, 11, 0.15);
+            --border: rgba(255, 255, 255, 0.06);
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --font-body: 'Satoshi', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo .rec-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        .logo .notes {
+            color: var(--accent);
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+        }
+
+        /* Support Options */
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .support-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .support-card:hover {
+            border-color: rgba(245, 158, 11, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .support-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .support-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-card p {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .support-card a {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .support-card a:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .contact-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .contact-section > p {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Tally Form Embed */
+        .tally-embed {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* When Tally is embedded, hide the placeholder */
+        .tally-embed iframe {
+            width: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.8125rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Hit<span class="rec-dot"></span>Rec <span class="notes">Notes</span></a>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>How can we help?</h1>
+            <p>Get support for Hit Rec Notes or request a new feature.</p>
+        </div>
+
+        <!-- Support Options -->
+        <div class="support-options">
+            <div class="support-card">
+                <div class="icon">📖</div>
+                <h3>Setup Guide</h3>
+                <p>Step-by-step instructions to get started with Hit Rec Notes.</p>
+                <a href="setup.html">View Guide</a>
+            </div>
+            <div class="support-card">
+                <div class="icon">💡</div>
+                <h3>Feature Requests</h3>
+                <p>Have an idea? Vote on features or suggest something new.</p>
+                <a href="features.html">Request Feature</a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-section">
+            <h2>Contact Support</h2>
+            <p>Need help with something else? Send us a message.</p>
+
+            <!-- TALLY FORM EMBED - Replace this div with your Tally embed code -->
+            <div class="tally-embed" id="tally-form">
+                <!--
+                    TO EMBED YOUR TALLY FORM:
+                    1. Go to tally.so and create your form
+                    2. Click "Share" and select "Embed"
+                    3. Copy the iframe code
+                    4. Replace this entire div with the iframe code
+
+                    Example:
+                    <iframe data-tally-src="https://tally.so/embed/YOURFORMID?alignLeft=1&hideTitle=1&transparentBackground=1"
+                            loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0"
+                            title="Contact Support"></iframe>
+                -->
+                <p>Tally form will appear here.<br>Or email us directly: <a href="mailto:support@hitrecnotes.com" style="color: var(--accent);">support@hitrecnotes.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="setup.html">Setup Guide</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Hit Rec Notes. All rights reserved.</p>
+    </footer>
+
+    <!-- Tally Script (uncomment when you have your form) -->
+    <!--
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    -->
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Hit Rec Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #1a1a1d;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #52525b;
+            --accent: #f59e0b;
+            --accent-glow: rgba(245, 158, 11, 0.15);
+            --accent-subtle: rgba(245, 158, 11, 0.08);
+            --border: rgba(255, 255, 255, 0.06);
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --font-body: 'Satoshi', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Grain overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, var(--bg-primary), transparent);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo .rec-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            margin: 0;
+            animation: pulse-dot 2s ease-in-out infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .logo .notes {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Legal Content Styles */
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .legal-content h1 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-content .last-updated {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 3rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .legal-content h3 {
+            font-size: 1.125rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-content p, .legal-content li {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .legal-content a {
+            color: var(--accent);
+        }
+
+        .legal-content hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        .legal-content strong {
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo .rec-dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: #ef4444;
+            border-radius: 50%;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        .footer-logo .notes {
+            color: var(--accent);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.8125rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .legal-content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .legal-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">Hit<span class="rec-dot"></span>Rec <span class="notes">Notes</span></a>
+        <div class="nav-links">
+            <a href="index.html">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Legal Content -->
+    <main class="legal-content">
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last Updated: February 2026</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By purchasing, downloading, installing, or using Hit Rec Notes ("the Software"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the Software.</p>
+
+        <hr>
+
+        <h2>2. License Grant</h2>
+        <p>Subject to your compliance with these Terms, Hit Rec Notes grants you a <strong>perpetual, non-exclusive, non-transferable license</strong> to use the Software under the following conditions:</p>
+        <ul>
+            <li><strong>Personal Use Only:</strong> The license is for your personal, non-commercial use.</li>
+            <li><strong>Device Limit:</strong> You may install and use the Software on up to <strong>three (3) devices</strong> that you own or control.</li>
+            <li><strong>No Expiration:</strong> Your license does not expire. Once purchased, you may use the Software indefinitely.</li>
+        </ul>
+        <p>This license is granted in exchange for your one-time purchase of $39 USD (or equivalent).</p>
+
+        <hr>
+
+        <h2>3. Restrictions</h2>
+        <p>You agree <strong>not</strong> to:</p>
+        <ul>
+            <li><strong>Reverse engineer, decompile, or disassemble</strong> the Software, except to the extent permitted by applicable law.</li>
+            <li><strong>Redistribute, resell, rent, lease, or sublicense</strong> the Software to any third party.</li>
+            <li><strong>Remove, alter, or obscure</strong> any copyright notices, trademarks, or other proprietary notices contained in the Software.</li>
+            <li><strong>Use the Software</strong> for any unlawful purpose or in violation of any applicable laws.</li>
+            <li><strong>Transfer your license</strong> to another person or entity.</li>
+        </ul>
+
+        <hr>
+
+        <h2>4. Third-Party Services</h2>
+
+        <h3>OpenAI Whisper API</h3>
+        <p>Hit Rec Notes uses the <strong>OpenAI Whisper API</strong> to convert your voice recordings to text. By using the Software, you acknowledge and agree that:</p>
+        <ul>
+            <li><strong>Your API Key:</strong> You are responsible for providing and managing your own OpenAI API key. The Software does not include API access.</li>
+            <li><strong>Direct Transmission:</strong> Your audio recordings are sent directly to OpenAI's servers for processing. Hit Rec Notes does not store or process your audio on our servers.</li>
+            <li><strong>OpenAI's Terms:</strong> You must comply with <a href="https://openai.com/terms">OpenAI's Terms of Use</a> and <a href="https://openai.com/policies/usage-policies">Usage Policies</a>. You are solely responsible for your use of the OpenAI API.</li>
+            <li><strong>API Costs:</strong> You are responsible for any costs associated with your OpenAI API usage. These costs are separate from your Hit Rec Notes purchase.</li>
+            <li><strong>Data Handling:</strong> Please review OpenAI's privacy policy to understand how your audio data is handled by their service.</li>
+        </ul>
+
+        <hr>
+
+        <h2>5. Intellectual Property</h2>
+        <p>Hit Rec Notes and all associated code, design, graphics, and documentation are the <strong>proprietary property</strong> of Hit Rec Notes and are protected by copyright and other intellectual property laws.</p>
+        <ul>
+            <li>The Software is <strong>not open source</strong>.</li>
+            <li><strong>All rights not expressly granted</strong> in these Terms are reserved by Hit Rec Notes.</li>
+            <li>You do not acquire any ownership rights by purchasing or using the Software.</li>
+        </ul>
+
+        <hr>
+
+        <h2>6. Disclaimer of Warranties</h2>
+        <p>THE SOFTWARE IS PROVIDED <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</p>
+        <p>To the fullest extent permitted by applicable law, Hit Rec Notes disclaims all warranties, including but not limited to:</p>
+        <ul>
+            <li><strong>Implied warranties of merchantability</strong></li>
+            <li><strong>Fitness for a particular purpose</strong></li>
+            <li><strong>Non-infringement</strong></li>
+            <li><strong>Accuracy or reliability of results</strong></li>
+        </ul>
+        <p>We do not warrant that:</p>
+        <ul>
+            <li>The Software will meet your specific requirements</li>
+            <li>The Software will be uninterrupted, timely, secure, or error-free</li>
+            <li>The results obtained from using the Software will be accurate or reliable</li>
+        </ul>
+
+        <hr>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law:</p>
+        <ul>
+            <li>Hit Rec Notes shall <strong>not be liable</strong> for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities.</li>
+            <li>Hit Rec Notes shall <strong>not be liable</strong> for any damages arising from your use of third-party services (including OpenAI).</li>
+            <li>In no event shall Hit Rec Notes' total liability exceed the <strong>amount you paid for the Software ($39 USD)</strong>.</li>
+        </ul>
+        <p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so the above limitations may not apply to you.</p>
+
+        <hr>
+
+        <h2>8. Refund Policy</h2>
+        <p>We offer a <strong>30-day money-back guarantee</strong> from the date of purchase.</p>
+        <ul>
+            <li>If you are not satisfied with the Software for any reason, you may request a full refund within 30 days.</li>
+            <li>To request a refund, contact us at <strong>support@hitrec.app</strong> with your purchase details.</li>
+            <li>Refunds are typically processed within 5-10 business days.</li>
+        </ul>
+        <p>After 30 days, all sales are final.</p>
+
+        <hr>
+
+        <h2>9. Termination</h2>
+
+        <h3>By Hit Rec Notes</h3>
+        <p>We may terminate or suspend your license immediately, without prior notice, if you:</p>
+        <ul>
+            <li>Violate any provision of these Terms</li>
+            <li>Engage in any activity that harms Hit Rec Notes or other users</li>
+            <li>Use the Software in an unauthorized or unlawful manner</li>
+        </ul>
+        <p>Upon termination, you must cease all use of the Software and delete all copies from your devices.</p>
+
+        <h3>By You</h3>
+        <p>You may stop using the Software at any time. No refund will be provided for voluntary termination outside the 30-day refund window.</p>
+
+        <hr>
+
+        <h2>10. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the developer resides, without regard to conflict of law principles.</p>
+        <p>Any disputes arising from these Terms or your use of the Software shall be resolved in the courts of that jurisdiction.</p>
+
+        <hr>
+
+        <h2>11. Changes to Terms</h2>
+        <p>We may update these Terms from time to time. When we do:</p>
+        <ul>
+            <li>The updated Terms will be posted on our website at <a href="https://hitrec.app">hitrec.app</a></li>
+            <li>The "Last Updated" date at the top of this document will be revised</li>
+            <li>For significant changes, we may notify users via email or in-app notification</li>
+        </ul>
+        <p>Your continued use of the Software after changes are posted constitutes your acceptance of the updated Terms.</p>
+
+        <hr>
+
+        <h2>12. General Provisions</h2>
+        <ul>
+            <li><strong>Entire Agreement:</strong> These Terms constitute the entire agreement between you and Hit Rec Notes regarding the Software.</li>
+            <li><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</li>
+            <li><strong>Waiver:</strong> Failure to enforce any right or provision of these Terms shall not constitute a waiver of that right or provision.</li>
+            <li><strong>Assignment:</strong> You may not assign or transfer these Terms or your license without our prior written consent.</li>
+        </ul>
+
+        <hr>
+
+        <h2>13. Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us:</p>
+        <p><strong>Email:</strong> <a href="mailto:support@hitrec.app">support@hitrec.app</a></p>
+
+        <hr>
+
+        <p><em>Thank you for using Hit Rec Notes!</em></p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-logo">Hit<span class="rec-dot"></span>Rec <span class="notes">Notes</span></p>
+        <div class="footer-links">
+            <a href="setup.html">Setup Guide</a>
+            <a href="mailto:support@hitrec.app">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Hit Rec Notes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
