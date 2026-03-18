@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hit Rec Notes Setup Guide - Get Your OpenAI API Key</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5MYF0JF4T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L5MYF0JF4T');
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Satoshi:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -494,7 +503,7 @@
                 <li><a href="#overview" class="active">Overview</a></li>
                 <li><a href="#get-api-key">Get Your API Key</a></li>
                 <li><a href="#add-credits">Add Credits</a></li>
-                <li><a href="#install-hitrec">Install Hit Rec Notes</a></li>
+                <li><a href="#install-hitrec">Install & System Tray</a></li>
                 <li><a href="#enter-key">Enter Your Key</a></li>
                 <li><a href="#test">Test It</a></li>
                 <li><a href="#hotkeys">Hotkey Reference</a></li>
@@ -638,8 +647,44 @@
             <ol>
                 <li>Download the <code>.exe</code> installer</li>
                 <li>Run the installer and follow the prompts</li>
-                <li>Hit Rec Notes will appear in your system tray</li>
+                <li>Hit Rec Notes will appear in your system tray (bottom-right corner, next to the clock)</li>
             </ol>
+
+            <h3>Finding the System Tray</h3>
+            <p>
+                The <strong>system tray</strong> is the area with small icons at the bottom-right corner of your screen,
+                next to the clock and date. Hit Rec Notes runs here quietly in the background.
+            </p>
+
+            <div class="callout info">
+                <span class="callout-icon">i</span>
+                <div class="callout-content">
+                    <strong>Can't see the Hit Rec Notes icon?</strong>
+                    <p>
+                        Windows often hides new app icons. Click the small <strong>^</strong> arrow in your taskbar
+                        to reveal hidden icons. You'll find Hit Rec Notes there.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Keep the Icon Always Visible (Windows 10/11)</h3>
+            <p>To pin Hit Rec Notes so it's always visible in your taskbar:</p>
+            <ol>
+                <li>Right-click on an empty area of your taskbar</li>
+                <li>Select <strong>"Taskbar settings"</strong></li>
+                <li>Scroll down and click <strong>"Other system tray icons"</strong></li>
+                <li>Find <strong>"Hit Rec Notes"</strong> and toggle it <strong>ON</strong></li>
+            </ol>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Alternatively: Settings → Personalization → Taskbar → Other system tray icons
+            </p>
+
+            <h3>Using the Tray Icon</h3>
+            <ul>
+                <li><strong>Right-click the icon</strong> → Opens a menu with Settings, About, and Quit options</li>
+                <li><strong>Closing the settings window</strong> just hides it — the app keeps running in the tray</li>
+                <li><strong>To fully quit</strong>: Right-click the tray icon → "Quit"</li>
+            </ul>
 
             <h2 id="enter-key">Step 4: Enter Your API Key</h2>
 
