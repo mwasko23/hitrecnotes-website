@@ -301,34 +301,70 @@
             font-size: 1.125rem;
         }
 
-        /* Waveform visualization */
-        .waveform-container {
+        /* Demo video */
+        .demo-video-container {
             margin-top: 4rem;
             width: 100%;
-            max-width: 700px;
-            height: 120px;
+            max-width: 800px;
             position: relative;
             animation: fadeInUp 0.8s ease-out 0.5s both;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
         }
 
-        .waveform {
+        .demo-video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 8rem 2rem;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3px;
-            height: 100%;
+            flex-direction: column;
+            gap: 0;
         }
 
-        .waveform-bar {
-            width: 4px;
-            background: linear-gradient(to top, var(--accent), var(--accent-glow));
-            border-radius: 4px;
-            animation: wave 1.2s ease-in-out infinite;
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 1.75rem 0;
         }
 
-        @keyframes wave {
-            0%, 100% { transform: scaleY(0.3); }
-            50% { transform: scaleY(1); }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            line-height: 1.7;
         }
 
         /* Features Section */
@@ -785,6 +821,7 @@
             <a href="#features">Features</a>
             <a href="#how-it-works">How it works</a>
             <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
             <a href="#pricing" class="nav-cta">Get Hit Rec Notes</a>
         </div>
     </nav>
@@ -814,9 +851,12 @@
         </div>
         <p class="price-tag">One-time purchase. <strong>No subscription.</strong></p>
 
-        <!-- Animated Waveform -->
-        <div class="waveform-container">
-            <div class="waveform" id="waveform"></div>
+        <!-- Demo Video -->
+        <div class="demo-video-container">
+            <video controls autoplay muted loop playsinline>
+                <source src="assets/HitRecNotes_Demo_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
@@ -944,6 +984,40 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-header reveal">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-title">Common questions</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item reveal">
+                <p class="faq-question">Do I need an OpenAI account?</p>
+                <p class="faq-answer">Yes. You bring your own OpenAI API key and pay OpenAI directly for usage — about $0.006 per minute of audio. No markups from us.</p>
+            </div>
+            <div class="faq-item reveal">
+                <p class="faq-question">How much does the API cost?</p>
+                <p class="faq-answer">About $0.006 per minute of audio. A typical user spends less than $1 per month on API costs.</p>
+            </div>
+            <div class="faq-item reveal">
+                <p class="faq-question">Does it work offline?</p>
+                <p class="faq-answer">No. Hit Rec Notes requires an internet connection to reach the OpenAI Whisper API for transcription.</p>
+            </div>
+            <div class="faq-item reveal">
+                <p class="faq-question">What about my privacy?</p>
+                <p class="faq-answer">Your audio goes directly to OpenAI's API. Hit Rec Notes never sees, stores, or processes your data.</p>
+            </div>
+            <div class="faq-item reveal">
+                <p class="faq-question">Can I get a refund?</p>
+                <p class="faq-answer">Yes. 30-day money-back guarantee, no questions asked.</p>
+            </div>
+            <div class="faq-item reveal">
+                <p class="faq-question">Will it work on Mac or Linux?</p>
+                <p class="faq-answer">Windows only for now. Mac and Linux support is planned.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p class="footer-logo">Hit Rec <span>Notes</span></p>
@@ -957,20 +1031,6 @@
     </footer>
 
     <script>
-        // Generate waveform bars
-        const waveform = document.getElementById('waveform');
-        const barCount = 60;
-
-        for (let i = 0; i < barCount; i++) {
-            const bar = document.createElement('div');
-            bar.className = 'waveform-bar';
-            const height = 20 + Math.random() * 80;
-            bar.style.height = `${height}%`;
-            bar.style.animationDelay = `${i * 0.05}s`;
-            bar.style.animationDuration = `${0.8 + Math.random() * 0.8}s`;
-            waveform.appendChild(bar);
-        }
-
         // Scroll reveal animation
         const reveals = document.querySelectorAll('.reveal');
 
