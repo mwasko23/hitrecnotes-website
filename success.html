@@ -407,6 +407,41 @@
             text-decoration: underline;
         }
 
+        /* Troubleshooting accordion */
+        details {
+            border-bottom: 1px solid var(--border);
+        }
+
+        details:last-child {
+            border-bottom: none;
+        }
+
+        details summary {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::after {
+            content: '+';
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details summary:hover {
+            color: var(--accent);
+        }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -488,14 +523,26 @@
         <!-- Download Section -->
         <section class="download-section">
             <h2>Download Hit Rec Notes</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Your download should start automatically. If not, check your email for the download link.</p>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Click below to download the installer for Windows.</p>
             <div class="download-buttons">
+                <a href="https://github.com/mwasko23/hit-rec-notes/releases/download/v1.0.1/Hit.Rec.Notes.Setup.1.0.1.exe" class="download-btn windows" style="border-color: var(--accent);">
+                    <span class="platform-icon">&#128229;</span>
+                    <span>Download for Windows</span>
+                </a>
                 <a href="https://app.lemonsqueezy.com/my-orders" target="_blank" class="download-btn windows">
                     <span class="platform-icon">&#8862;</span>
                     <span>My Orders</span>
                 </a>
             </div>
-            <p class="download-note">Access your downloads anytime from your Lemon Squeezy account</p>
+            <p class="download-note">v1.0.1 (79 MB) - Windows 10/11</p>
+
+            <!-- Windows Security Note -->
+            <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: var(--bg-tertiary); border: 1px solid var(--border); border-radius: 8px; text-align: left;">
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">
+                    <strong style="color: var(--text-primary);">Note:</strong> Windows may show a security warning because we're a new app. This is normal.
+                    Click <strong>"More info"</strong> then <strong>"Run anyway"</strong> to proceed.
+                </p>
+            </div>
         </section>
 
         <!-- Quick Start Steps -->
@@ -504,8 +551,8 @@
             <ol class="quickstart-steps">
                 <li>
                     <div class="step-content">
-                        <strong>Install the app</strong>
-                        <p>Run the installer you downloaded</p>
+                        <strong>Run the installer</strong>
+                        <p>Double-click the downloaded file. If Windows shows a blue "Windows protected your PC" screen, click <strong>"More info"</strong> then <strong>"Run anyway"</strong>.</p>
                     </div>
                 </li>
                 <li>
@@ -517,16 +564,47 @@
                 <li>
                     <div class="step-content">
                         <strong>Add your OpenAI API key</strong>
-                        <p>Get one at <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com</a></p>
+                        <p>Get one at <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com</a> (requires OpenAI account)</p>
                     </div>
                 </li>
                 <li>
                     <div class="step-content">
                         <strong>Start recording!</strong>
-                        <p>Press Ctrl+Win to record, release to transcribe</p>
+                        <p>Press <strong>Ctrl+Win</strong> to record, release to transcribe</p>
                     </div>
                 </li>
             </ol>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="quickstart-section" style="background: var(--bg-primary); border-color: var(--border);">
+            <h2>Having trouble?</h2>
+            <div style="text-align: left;">
+                <details style="margin-bottom: 1rem;">
+                    <summary style="cursor: pointer; font-weight: 600; padding: 0.75rem 0; color: var(--text-primary);">Download won't start or gets stuck</summary>
+                    <p style="color: var(--text-secondary); font-size: 0.9375rem; padding: 0.5rem 0 0.75rem 1rem;">
+                        Try right-clicking the download button and selecting "Save link as...". If using Chrome, check <strong>chrome://downloads</strong> and click Resume. You can also try a different browser.
+                    </p>
+                </details>
+                <details style="margin-bottom: 1rem;">
+                    <summary style="cursor: pointer; font-weight: 600; padding: 0.75rem 0; color: var(--text-primary);">Windows says "Windows protected your PC"</summary>
+                    <p style="color: var(--text-secondary); font-size: 0.9375rem; padding: 0.5rem 0 0.75rem 1rem;">
+                        This is normal for new apps. Click <strong>"More info"</strong> (blue text below the message), then click <strong>"Run anyway"</strong>. The app is safe to install.
+                    </p>
+                </details>
+                <details style="margin-bottom: 1rem;">
+                    <summary style="cursor: pointer; font-weight: 600; padding: 0.75rem 0; color: var(--text-primary);">Antivirus is blocking the installer</summary>
+                    <p style="color: var(--text-secondary); font-size: 0.9375rem; padding: 0.5rem 0 0.75rem 1rem;">
+                        Some antivirus programs flag new apps. Temporarily disable your antivirus, install Hit Rec Notes, then re-enable it. You can also add an exception for the installer.
+                    </p>
+                </details>
+                <details>
+                    <summary style="cursor: pointer; font-weight: 600; padding: 0.75rem 0; color: var(--text-primary);">Lost your license key?</summary>
+                    <p style="color: var(--text-secondary); font-size: 0.9375rem; padding: 0.5rem 0 0.75rem 1rem;">
+                        Check your email for the purchase confirmation from Lemon Squeezy, or log into <a href="https://app.lemonsqueezy.com/my-orders" target="_blank" style="color: var(--accent);">My Orders</a> to view your license key.
+                    </p>
+                </details>
+            </div>
         </section>
 
         <!-- Support Section -->
