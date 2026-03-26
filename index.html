@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hit Rec Notes - Voice to Text App for Windows | Speak. Transcribe. Done.</title>
+    <title>Hit Rec Notes - Voice to Text for Windows | Talk Faster Than You Type</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5MYF0JF4T"></script>
@@ -15,7 +15,7 @@
     </script>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Hit Rec Notes is a voice-to-text desktop app for Windows. Hold a hotkey, speak, and your words are instantly transcribed and pasted. One-time $39 purchase, no subscription. Uses OpenAI Whisper API.">
+    <meta name="description" content="Stop typing, start talking. Hit Rec Notes pastes your speech as text wherever your cursor is — emails, docs, Slack, anywhere. $39 one-time, no subscription. Windows desktop app powered by OpenAI Whisper.">
     <meta name="keywords" content="voice to text, speech to text, transcription app, Windows dictation, OpenAI Whisper, voice typing, dictation software, speech recognition">
     <meta name="author" content="Hit Rec Notes">
     <meta name="robots" content="index, follow">
@@ -24,15 +24,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hitrecnotes.com/">
-    <meta property="og:title" content="Hit Rec Notes - Voice to Text App for Windows">
-    <meta property="og:description" content="Speak and transcribe instantly. One-time $39 purchase, no subscription. Your voice becomes text wherever your cursor is.">
+    <meta property="og:title" content="Hit Rec Notes - Talk Faster Than You Type">
+    <meta property="og:description" content="Stop typing, start talking. Your speech becomes text wherever your cursor is — emails, docs, Slack, anywhere. $39 one-time, no subscription.">
     <meta property="og:image" content="https://hitrecnotes.com/og-image.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://hitrecnotes.com/">
-    <meta name="twitter:title" content="Hit Rec Notes - Voice to Text App for Windows">
-    <meta name="twitter:description" content="Speak and transcribe instantly. One-time $39 purchase, no subscription.">
+    <meta name="twitter:title" content="Hit Rec Notes - Talk Faster Than You Type">
+    <meta name="twitter:description" content="Stop typing, start talking. Speech to text wherever your cursor is. $39 one-time, no subscription.">
     <meta name="twitter:image" content="https://hitrecnotes.com/og-image.png">
 
     <!-- Favicon -->
@@ -365,6 +365,62 @@
             color: var(--text-secondary);
             font-size: 0.9375rem;
             line-height: 1.7;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 6rem 2rem;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .use-cases::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .use-case {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .use-case:hover {
+            border-color: rgba(245, 158, 11, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .use-case-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .use-case h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .use-case p {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Features Section */
@@ -831,10 +887,10 @@
         <div class="hero-badge">
             <span>Now available for Windows</span>
         </div>
-        <h1>Speak. Transcribe.<br><em>Done.</em></h1>
+        <h1>Talk faster<br>than you <em>type.</em></h1>
         <p class="hero-subtitle">
-            Your voice, instantly typed. One hotkey turns speech into text,
-            pasted exactly where your cursor is. Works in any app.
+            Hold a hotkey. Speak. Your words appear wherever your cursor is
+            — emails, docs, Slack, anywhere. No switching apps. No copying. Just talk.
         </p>
         <div class="hero-cta-group">
             <a href="https://sferaalabs.lemonsqueezy.com/checkout/buy/44268723-8fa6-45e7-b394-3c53b71dc414" class="btn-primary" id="hero-buy-btn">
@@ -860,11 +916,41 @@
         </div>
     </section>
 
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="section-header reveal">
+            <p class="section-label">Use it everywhere</p>
+            <h2 class="section-title">Your voice works<br>in every app.</h2>
+        </div>
+        <div class="use-cases-grid">
+            <div class="use-case reveal">
+                <div class="use-case-icon">&#9993;</div>
+                <h3>Email replies</h3>
+                <p>That 15-minute email? Say it in 45 seconds.</p>
+            </div>
+            <div class="use-case reveal">
+                <div class="use-case-icon">&#128172;</div>
+                <h3>Slack & Teams</h3>
+                <p>Talk your message, skip the typing.</p>
+            </div>
+            <div class="use-case reveal">
+                <div class="use-case-icon">&#128221;</div>
+                <h3>Rough drafts</h3>
+                <p>Get ideas out before they disappear. Edit later.</p>
+            </div>
+            <div class="use-case reveal">
+                <div class="use-case-icon">&#127891;</div>
+                <h3>Meeting notes</h3>
+                <p>Capture action items while they're fresh.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="section-header reveal">
             <p class="section-label">Features</p>
-            <h2 class="section-title">Everything you need.<br>Nothing you don't.</h2>
+            <h2 class="section-title">Simple by design.<br>Powerful when you need it.</h2>
         </div>
         <div class="features-grid">
             <div class="feature-card reveal">
@@ -889,8 +975,8 @@
             </div>
             <div class="feature-card reveal">
                 <div class="feature-icon">🔒</div>
-                <h3>Your API Key</h3>
-                <p>Bring your own OpenAI key. Your audio goes directly to OpenAI—we never see or store your data.</p>
+                <h3>No Subscription Markup</h3>
+                <p>You use your own OpenAI key. Audio goes straight to Whisper for transcription — about $0.006/min. We never see or store your data.</p>
             </div>
             <div class="feature-card reveal">
                 <div class="feature-icon">💻</div>
@@ -1014,6 +1100,14 @@
             <div class="faq-item reveal">
                 <p class="faq-question">Will it work on Mac or Linux?</p>
                 <p class="faq-answer">Windows only for now. Mac and Linux support is planned.</p>
+            </div>
+            <div class="faq-item reveal">
+                <p class="faq-question">Why use this instead of Otter, Whispr Flow, or built-in dictation?</p>
+                <p class="faq-answer">Most dictation tools charge $10-13/month for a subscription that wraps the same AI. Hit Rec Notes is a one-time $39 purchase — you pay OpenAI directly for pennies per minute. No middleman markup, no recurring fees, and your audio is never stored.</p>
+            </div>
+            <div class="faq-item reveal">
+                <p class="faq-question">Does it save or store my audio?</p>
+                <p class="faq-answer">No. Audio is processed in memory, sent directly to OpenAI for transcription, and immediately discarded. Nothing is saved to disk or to any server.</p>
             </div>
         </div>
     </section>
