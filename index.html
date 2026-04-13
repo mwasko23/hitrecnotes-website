@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hit Rec Notes - Voice to Text for Windows | Talk Faster Than You Type</title>
+    <title>HitRec — Dictation You Own. $39 One-Time.</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5MYF0JF4T"></script>
@@ -15,7 +15,7 @@
     </script>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Stop typing, start talking. HitRecNotes pastes your speech as text wherever your cursor is — emails, docs, Slack, anywhere. $39 one-time, no subscription. The modern Dragon alternative for Windows.">
+    <meta name="description" content="Windows dictation powered by OpenAI Whisper. Pay $39 once, bring your own API key, and pay only for what you actually speak. No subscription.">
     <meta name="keywords" content="voice to text, speech to text, Windows dictation, voice typing, dictation software, speech recognition, Dragon alternative, Dragon NaturallySpeaking alternative, voice to text Windows, dictation no subscription">
     <meta name="author" content="Hit Rec Notes">
     <meta name="robots" content="index, follow">
@@ -24,15 +24,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hitrecnotes.com/">
-    <meta property="og:title" content="Hit Rec Notes - Talk Faster Than You Type">
-    <meta property="og:description" content="Stop typing, start talking. Your speech becomes text wherever your cursor is — emails, docs, Slack, anywhere. $39 one-time, no subscription.">
+    <meta property="og:title" content="HitRec — Dictation You Own. $39 One-Time.">
+    <meta property="og:description" content="Windows dictation powered by OpenAI Whisper. Pay $39 once, bring your own API key, and pay only for what you actually speak. No subscription.">
     <meta property="og:image" content="https://hitrecnotes.com/og-image.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://hitrecnotes.com/">
-    <meta name="twitter:title" content="Hit Rec Notes - Talk Faster Than You Type">
-    <meta name="twitter:description" content="Stop typing, start talking. Speech to text wherever your cursor is. $39 one-time, no subscription.">
+    <meta name="twitter:title" content="HitRec — Dictation You Own. $39 One-Time.">
+    <meta name="twitter:description" content="Windows dictation powered by OpenAI Whisper. Pay $39 once, bring your own API key, and pay only for what you actually speak. No subscription.">
     <meta name="twitter:image" content="https://hitrecnotes.com/og-image.png">
 
     <!-- Favicon -->
@@ -993,6 +993,187 @@
             transform: translateY(0);
         }
 
+        /* Hero platform note & trust row */
+        .hero-platform-note {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            margin-top: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .trust-row {
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            letter-spacing: 0.02em;
+            animation: fadeInUp 0.8s ease-out 0.45s both;
+        }
+
+        /* Why subscriptions section */
+        .why-subscriptions {
+            padding: 8rem 2rem;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .why-subscriptions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .why-subscriptions-content {
+            max-width: 720px;
+            margin: 0 auto 3rem;
+        }
+
+        .why-subscriptions-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+        }
+
+        .why-subscriptions-content p {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Pricing comparison table */
+        .pricing-comparison-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .pricing-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        .pricing-comparison-table th,
+        .pricing-comparison-table td {
+            padding: 1rem 1.25rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9375rem;
+        }
+
+        .pricing-comparison-table th {
+            font-weight: 700;
+            color: var(--text-primary);
+            background: var(--bg-tertiary);
+        }
+
+        .pricing-comparison-table th:first-child {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .pricing-comparison-table th:nth-child(3),
+        .pricing-comparison-table th:nth-child(4) {
+            color: var(--accent);
+        }
+
+        .pricing-comparison-table td {
+            color: var(--text-secondary);
+        }
+
+        .pricing-comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .pricing-comparison-table td:nth-child(3),
+        .pricing-comparison-table td:nth-child(4) {
+            color: var(--text-primary);
+        }
+
+        .pricing-comparison-table tbody tr:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .pricing-comparison-note {
+            max-width: 720px;
+            margin: 2rem auto 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        /* Use cases intro and closing */
+        .use-cases-intro {
+            max-width: 720px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        .use-cases-closing {
+            max-width: 720px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.125rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* How it works note */
+        .how-it-works-note {
+            max-width: 720px;
+            margin: 2rem auto 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+
+        /* Privacy section */
+        .privacy {
+            padding: 8rem 2rem;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .privacy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .privacy-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .privacy-content p {
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .privacy-content p strong {
+            color: var(--text-primary);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav {
@@ -1029,6 +1210,14 @@
             .features-grid {
                 grid-template-columns: 1fr;
             }
+
+            .why-subscriptions {
+                padding: 5rem 1.5rem;
+            }
+
+            .privacy {
+                padding: 5rem 1.5rem;
+            }
         }
     </style>
 
@@ -1040,17 +1229,12 @@
         "name": "Hit Rec Notes",
         "operatingSystem": "Windows 10, Windows 11",
         "applicationCategory": "ProductivityApplication",
-        "description": "Voice-to-text desktop app for Windows. Speak and transcribe instantly using OpenAI Whisper API.",
+        "description": "Windows dictation powered by OpenAI Whisper. Pay $39 once, bring your own API key, and pay only for what you actually speak. No subscription.",
         "offers": {
             "@type": "Offer",
             "price": "39.00",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "ratingCount": "1"
         }
     }
     </script>
@@ -1071,31 +1255,23 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-badge">
-            <span>Now available for Windows</span>
-        </div>
-        <h1>Talk faster<br>than you <em>type.</em></h1>
+        <h1>Dictation you own.<br><em>Not another subscription.</em></h1>
         <p class="hero-subtitle">
-            Hold a hotkey. Speak. Your words appear wherever your cursor is
-            — emails, docs, Slack, anywhere. No switching apps. No copying. Just talk.
+            Buy HitRec once for $39. Bring your own OpenAI key. Pay about $0.006 per minute for what you actually speak — and nothing more.
         </p>
         <div class="hero-cta-group">
             <a href="https://sferaalabs.lemonsqueezy.com/checkout/buy/44268723-8fa6-45e7-b394-3c53b71dc414" class="btn-primary" id="hero-buy-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                Get Started — $39
+                Get HitRec — $39 one-time
             </a>
-            <a href="#how-it-works" class="btn-secondary">
-                See how it works
+            <a href="#demo" class="btn-secondary">
+                ▶ Watch 60-second demo
             </a>
         </div>
-        <p class="price-tag">One-time purchase. <strong>No subscription.</strong></p>
+        <p class="hero-platform-note"><em>Windows only today. Mac support in development.</em></p>
+        <p class="trust-row">Powered by OpenAI Whisper · Your audio never touches our servers · One-time purchase, lifetime updates</p>
 
         <!-- Demo Video -->
-        <div class="demo-video-container">
+        <div class="demo-video-container" id="demo">
             <video id="demo-video" controls autoplay muted loop playsinline>
                 <source src="assets/HitRecNotes_Demo_1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -1103,34 +1279,79 @@
         </div>
     </section>
 
-    <!-- Use Cases Section -->
-    <section class="use-cases">
-        <div class="section-header reveal">
-            <p class="section-label">Use it everywhere</p>
-            <h2 class="section-title">Your voice works<br>in every app.</h2>
+    <!-- Why We Don't Do Subscriptions -->
+    <section class="why-subscriptions" id="why-one-time">
+        <div class="why-subscriptions-content reveal">
+            <h2>Why we don't do subscriptions.</h2>
+            <p>Every other dictation app charges $7–$30 per month, forever, whether you use it or not. We thought that was backwards.</p>
+            <p>HitRec is software. You buy it. You own it. It runs on your computer. When you dictate, your voice goes directly from your machine to OpenAI using your own API key — we never see it, never store it, never bill you for it.</p>
+            <p>The result: you pay us once, and you pay OpenAI pennies for what you actually speak.</p>
         </div>
+        <div class="pricing-comparison-wrap reveal">
+            <table class="pricing-comparison-table">
+                <thead>
+                    <tr>
+                        <th>Your usage</th>
+                        <th>Subscription tool</th>
+                        <th>HitRec (Year 1)</th>
+                        <th>HitRec (Year 2+)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>30 min/month</td>
+                        <td>~$84/year</td>
+                        <td>$39 + ~$2</td>
+                        <td>~$2/year</td>
+                    </tr>
+                    <tr>
+                        <td>2 hours/month</td>
+                        <td>~$84/year</td>
+                        <td>$39 + ~$9</td>
+                        <td>~$9/year</td>
+                    </tr>
+                    <tr>
+                        <td>5 hours/month</td>
+                        <td>~$84/year</td>
+                        <td>$39 + ~$22</td>
+                        <td>~$22/year</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="pricing-comparison-note reveal">After month one, HitRec costs less than one coffee per month. For most people, it pays for itself before the first quarterly subscription bill would land.</p>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases" id="use-cases">
+        <div class="section-header reveal">
+            <p class="section-label">What people use it for</p>
+            <h2 class="section-title">Built for the writing<br>you don't want to do.</h2>
+        </div>
+        <p class="use-cases-intro reveal">Most dictation tools are designed for novelists and doctors. HitRec is designed for the other 95% of people — the ones who spend their day typing emails, Slack messages, meeting notes, and status updates they'd rather just say.</p>
         <div class="use-cases-grid">
             <div class="use-case reveal">
                 <div class="use-case-icon">&#9993;</div>
                 <h3>Email replies</h3>
-                <p>That 15-minute email? Say it in 45 seconds.</p>
+                <p>Knock out a thoughtful response in the time it takes to type "Hi [Name], thanks for reaching out."</p>
             </div>
             <div class="use-case reveal">
                 <div class="use-case-icon">&#128172;</div>
-                <h3>Slack & Teams</h3>
-                <p>Talk your message, skip the typing.</p>
+                <h3>Slack and Teams</h3>
+                <p>Say what you mean before the thread moves on.</p>
             </div>
             <div class="use-case reveal">
                 <div class="use-case-icon">&#128221;</div>
-                <h3>Rough drafts</h3>
-                <p>Get ideas out before they disappear. Edit later.</p>
+                <h3>First drafts</h3>
+                <p>Proposals, performance reviews, job applications. The blank page is the hardest part. Talk through it first, edit after.</p>
             </div>
             <div class="use-case reveal">
                 <div class="use-case-icon">&#127891;</div>
                 <h3>Meeting notes</h3>
-                <p>Capture action items while they're fresh.</p>
+                <p>Capture the point while it's fresh, instead of five minutes later when you're trying to remember what was decided.</p>
             </div>
         </div>
+        <p class="use-cases-closing reveal">If you've ever opened your laptop to 47 unread emails and wanted to go back to bed — HitRec is for you.</p>
     </section>
 
     <!-- Why I Built This -->
@@ -1152,25 +1373,6 @@
         </div>
     </section>
 
-    <!-- Who Is This For -->
-    <section class="audience" id="audience">
-        <div class="audience-content">
-            <div class="section-header reveal">
-                <p class="section-label">Built for people who type all day</p>
-                <h2 class="section-title">If your brain moves faster<br>than your hands, this is for you.</h2>
-            </div>
-            <p class="audience-intro reveal">HitRecNotes is for anyone who spends their day translating thoughts into keystrokes — and wishes they could just talk instead.</p>
-            <div class="audience-list reveal">
-                <p><strong>Executive assistants</strong> juggling fifty emails before noon.</p>
-                <p><strong>Project managers</strong> drowning in status updates and meeting follow-ups.</p>
-                <p><strong>Consultants</strong> writing proposals and client reports on deadline.</p>
-                <p><strong>Paralegals</strong> documenting case notes for hours at a stretch.</p>
-                <p><strong>Writers and content creators</strong> staring at blank pages, knowing exactly what they want to say but not wanting to type it all out.</p>
-                <p><strong>Anyone</strong> whose wrists start protesting around 3pm.</p>
-            </div>
-            <p class="audience-note reveal">You don't need to be technical. You don't need to understand how it works under the hood. You just need a Windows PC and something to say.</p>
-        </div>
-    </section>
 
     <!-- Features Section -->
     <section class="features" id="features">
@@ -1216,44 +1418,46 @@
     <section class="how-it-works" id="how-it-works">
         <div class="section-header reveal">
             <p class="section-label">How it works</p>
-            <h2 class="section-title">Three steps. That's it.</h2>
+            <h2 class="section-title">Three seconds to learn.<br>Forever to use.</h2>
         </div>
         <div class="steps-container">
             <div class="step reveal">
                 <div class="step-number">1</div>
                 <div class="step-content">
-                    <h3>Press the hotkey</h3>
-                    <p>Hold to record, or use hands-free toggle mode for longer sessions.</p>
-                    <div class="hotkey-display">
-                        <span class="key">Ctrl</span>
-                        <span class="key">Win</span>
-                        <span style="color: var(--text-muted); margin: 0 0.5rem;">hold to record</span>
-                    </div>
-                    <div class="hotkey-display" style="margin-top: 0.75rem;">
-                        <span class="key">Ctrl</span>
-                        <span class="key">Shift</span>
-                        <span class="key">Space</span>
-                        <span style="color: var(--text-muted); margin: 0 0.5rem;">start</span>
-                        <span class="key" style="margin-left: 0.5rem;">Ctrl</span>
-                        <span class="key">Win</span>
-                        <span style="color: var(--text-muted); margin: 0 0.5rem;">stop</span>
-                    </div>
+                    <h3>Hold the hotkey</h3>
+                    <p>Default is right-Alt, but you can remap it to anything.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-number">2</div>
                 <div class="step-content">
                     <h3>Speak naturally</h3>
-                    <p>Talk at your normal pace. Whisper AI understands context, punctuation, and even handles "umms" gracefully.</p>
+                    <p>First draft, rambling thought, full email — whatever you need. HitRec is listening.</p>
                 </div>
             </div>
             <div class="step reveal">
                 <div class="step-number">3</div>
                 <div class="step-content">
-                    <h3>Text appears instantly</h3>
-                    <p>Stop recording and your words are transcribed and pasted right where your cursor is. No copying, no switching windows.</p>
+                    <h3>Release</h3>
+                    <p>Your words appear wherever your cursor is. Email, Slack, Word, Teams, Notion, the address bar — it doesn't matter. If you can type there, you can dictate there.</p>
                 </div>
             </div>
+        </div>
+        <p class="how-it-works-note reveal">That's the whole product. No dashboards. No "projects." No cloud folders to manage. It's a keyboard shortcut that turns your voice into text.</p>
+    </section>
+
+    <!-- Privacy & Trust -->
+    <section class="privacy" id="privacy">
+        <div class="section-header reveal">
+            <p class="section-label">Privacy & trust</p>
+            <h2 class="section-title">Your voice is your business.</h2>
+        </div>
+        <div class="privacy-content reveal">
+            <p>HitRec runs on your computer. When you dictate, your audio goes directly from your machine to OpenAI using your API key — it never passes through our servers, our database, or our logs. We couldn't listen to your dictation if we wanted to.</p>
+            <p><strong>What HitRec sees:</strong> Nothing. The app doesn't phone home with your audio, your transcripts, or your usage.</p>
+            <p><strong>What OpenAI sees:</strong> Your audio, briefly, to transcribe it. Per OpenAI's API policy, audio sent through the API is not used to train models and is deleted after processing.</p>
+            <p><strong>What we see:</strong> A license check when you first activate the app. That's it.</p>
+            <p>This is the whole reason we don't run our own cloud. It's simpler for us, cheaper for you, and private by design.</p>
         </div>
     </section>
 
@@ -1386,98 +1590,36 @@
     <section class="faq" id="faq">
         <div class="section-header reveal">
             <p class="section-label">FAQ</p>
-            <h2 class="section-title">Common questions</h2>
+            <h2 class="section-title">Questions you're probably<br>about to ask.</h2>
         </div>
         <div class="faq-grid">
             <div class="faq-item reveal">
-                <p class="faq-question">How does the setup work?</p>
-                <p class="faq-answer">After you buy HitRecNotes, you'll connect it to the AI that powers the transcription — the same technology behind ChatGPT's voice features. It takes about 5 minutes, and we have a step-by-step guide with screenshots. Or, if you'd prefer, you can <a href="https://calendly.com/marta-sferaa/30min" style="color: var(--accent);">book a free setup call</a> and we'll walk you through it together.</p>
+                <p class="faq-question">What's an OpenAI API key and how do I get one?</p>
+                <p class="faq-answer">It's a string of characters from OpenAI that lets HitRec use their Whisper transcription service on your behalf. Creating one takes about 2 minutes: sign up at platform.openai.com, add a payment method (usually with a $5 minimum), and copy the key into HitRec's settings. We'll walk you through it after you install.</p>
             </div>
             <div class="faq-item reveal">
-                <p class="faq-question">Do I have to pay monthly for the transcription?</p>
-                <p class="faq-answer">No. There's a small usage cost that goes directly to the AI provider — most people spend under $1 per month. You load a one-time credit of $5 to $10, and that lasts most people months. There is no subscription, ever.</p>
+                <p class="faq-question">How much will OpenAI actually cost me?</p>
+                <p class="faq-answer">Whisper costs $0.006 per minute of audio. If you dictate 30 minutes a month, that's about 18 cents. An hour a day, 5 days a week? About $7 a month — and you'd pay that to a subscription tool anyway, except OpenAI only charges you for what you actually use.</p>
             </div>
             <div class="faq-item reveal">
-                <p class="faq-question">How accurate is it?</p>
-                <p class="faq-answer">Very. HitRecNotes uses the same AI that powers ChatGPT's voice features. It handles accents, natural speech patterns, and even adds punctuation automatically. Most users see around 97% accuracy right out of the box — no training period needed.</p>
+                <p class="faq-question">Is HitRec really one-time? No hidden subscription?</p>
+                <p class="faq-answer">Really. One payment, lifetime access, lifetime updates. The only ongoing cost is whatever you pay OpenAI for the audio you choose to send them.</p>
             </div>
             <div class="faq-item reveal">
-                <p class="faq-question">Does it work offline?</p>
-                <p class="faq-answer">No. HitRecNotes needs an internet connection to reach the AI that does the transcription. Most people who use it are already at a desk with Wi-Fi, so this isn't usually an issue.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">What about my privacy?</p>
-                <p class="faq-answer">Your audio goes directly to the AI for transcription and is immediately deleted. HitRecNotes never sees, stores, or has access to your audio or text. No screenshots. No tracking. No telemetry. Your work stays yours.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Can I get a refund?</p>
-                <p class="faq-answer">Yes. 30-day money-back guarantee, no questions asked.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Will it work on Mac or Linux?</p>
-                <p class="faq-answer">Windows only for now. Mac support is in development.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Why use this instead of WisprFlow, Otter, or the built-in Windows dictation?</p>
-                <p class="faq-answer">Most voice-to-text tools charge $10 to $17 per month — that's $120 to $200 a year. HitRecNotes is $39, once. It's more accurate than built-in Windows dictation, works in every app, and pastes text right where your cursor is. And unlike some competitors, it doesn't capture screenshots of your screen or store your audio.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Does it save my recordings?</p>
-                <p class="faq-answer">No. Audio is processed, transcribed, and immediately discarded. Nothing is saved to your computer or to any server.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">I'm not very technical. Can I still use this?</p>
-                <p class="faq-answer">Absolutely. If you can install an app and follow a 5-minute guide, you're set. And if you'd rather have help, <a href="https://calendly.com/marta-sferaa/30min" style="color: var(--accent);">book a free setup call</a> — we'll do it together over screen share in about 10 minutes.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="section-header reveal">
-            <p class="section-label">FAQ</p>
-            <h2 class="section-title">Common questions</h2>
-        </div>
-        <div class="faq-grid">
-            <div class="faq-item reveal">
-                <p class="faq-question">How does the setup work?</p>
-                <p class="faq-answer">After you buy HitRecNotes, you'll connect it to the AI that powers the transcription — the same technology behind ChatGPT's voice features. It takes about 5 minutes, and we have a step-by-step guide with screenshots. Or, if you'd prefer, you can <a href="https://calendly.com/marta-sferaa/30min" style="color: var(--accent);">book a free setup call</a> and we'll walk you through it together.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Do I have to pay monthly for the transcription?</p>
-                <p class="faq-answer">No. There's a small usage cost that goes directly to the AI provider — most people spend under $1 per month. You load a one-time credit of $5 to $10, and that lasts most people months. There is no subscription, ever.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">How accurate is it?</p>
-                <p class="faq-answer">Very. HitRecNotes uses the same AI that powers ChatGPT's voice features. It handles accents, natural speech patterns, and even adds punctuation automatically. Most users see around 97% accuracy right out of the box — no training period needed.</p>
+                <p class="faq-question">Why Windows only?</p>
+                <p class="faq-answer">Because I'm one person, and shipping a rock-solid Windows app is a better bet than shipping a half-finished one for three platforms. Mac is on the roadmap. <a href="mailto:hello@hitrecnotes.com" style="color: var(--accent);">Email me at hello@hitrecnotes.com</a> and I'll let you know when Mac ships.</p>
             </div>
             <div class="faq-item reveal">
                 <p class="faq-question">Does it work offline?</p>
-                <p class="faq-answer">No. HitRecNotes needs an internet connection to reach the AI that does the transcription. Most people who use it are already at a desk with Wi-Fi, so this isn't usually an issue.</p>
+                <p class="faq-answer">No — transcription requires sending audio to OpenAI's Whisper API, which needs an internet connection. A fully offline version is something I'm exploring for a future release.</p>
             </div>
             <div class="faq-item reveal">
-                <p class="faq-question">What about my privacy?</p>
-                <p class="faq-answer">Your audio goes directly to the AI for transcription and is immediately deleted. HitRecNotes never sees, stores, or has access to your audio or text. No screenshots. No tracking. No telemetry. Your work stays yours.</p>
+                <p class="faq-question">What if I don't like it?</p>
+                <p class="faq-answer">30-day refund, no questions asked. <a href="mailto:hello@hitrecnotes.com" style="color: var(--accent);">Email me at hello@hitrecnotes.com</a>. I'd rather give you your $39 back than have a frustrated user.</p>
             </div>
             <div class="faq-item reveal">
-                <p class="faq-question">Can I get a refund?</p>
-                <p class="faq-answer">Yes. 30-day money-back guarantee, no questions asked.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Will it work on Mac or Linux?</p>
-                <p class="faq-answer">Windows only for now. Mac support is in development.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Why use this instead of WisprFlow, Otter, or the built-in Windows dictation?</p>
-                <p class="faq-answer">Most voice-to-text tools charge $10 to $17 per month — that's $120 to $200 a year. HitRecNotes is $39, once. It's more accurate than built-in Windows dictation, works in every app, and pastes text right where your cursor is. And unlike some competitors, it doesn't capture screenshots of your screen or store your audio.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">Does it save my recordings?</p>
-                <p class="faq-answer">No. Audio is processed, transcribed, and immediately discarded. Nothing is saved to your computer or to any server.</p>
-            </div>
-            <div class="faq-item reveal">
-                <p class="faq-question">I'm not very technical. Can I still use this?</p>
-                <p class="faq-answer">Absolutely. If you can install an app and follow a 5-minute guide, you're set. And if you'd rather have help, <a href="https://calendly.com/marta-sferaa/30min" style="color: var(--accent);">book a free setup call</a> — we'll do it together over screen share in about 10 minutes.</p>
+                <p class="faq-question">Who built this?</p>
+                <p class="faq-answer">Hi, I'm Marta. I built HitRec because I was tired of either paying $15/month forever for dictation or paying $200 once for Dragon and getting a bloated app I didn't need. I wanted something simple that I owned.</p>
             </div>
         </div>
     </section>
